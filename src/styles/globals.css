@@ -2,26 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  input, textarea {
+    @apply px-4 py-2 rounded border border-blue-300;
+  }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .form-group {
+    @apply flex flex-col gap-2;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.bg-blue-1 {
+  background-color: #E7F5FD;
+}
+.bg-blue-2 {
+  background-color: #CAECFF;
+}
+.bg-blue-3 {
+  background-color: #2D9CDB;
+}
+.bg-blue-4 {
+  background-color: #0099EE;
+}
+
+.bg-green-1 {
+  background-color: #56E4A0;
+}
+.bg-white {
+  background-color: #FFFFFF;
+}
+.bg-red-1 {
+  background-color: #F36868;
+}
+
+.text-blue-1 {
+  color: #3B97CB;
+}
+
+.width-btn {
+  width: calc(100% - 48px);
+}
+.radio-group {
+  position: relative;
+  width: 100%;
+
+}
+
+.radio input ~ label {
+  background-color: #CAECFF;
+  color: #0099EE;
+}
+.radio input:checked ~ label {
+  background-color: #0099EE;
+  color: white;
 }
