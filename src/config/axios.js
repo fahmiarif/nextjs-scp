@@ -1,7 +1,8 @@
 import Axios from 'axios';
 
+const host = "https://belaundry-api.sebaris.link";
 const axios = Axios.create({
-  baseURL: "https://belaundry-api.sebaris.link",
+  baseURL: host,
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",

@@ -44,7 +44,10 @@ export default function index() {
           <thead>
             <tr className='border'>
               <th className='border px-4'>Name</th>
+              <th className='border px-4'>Description</th>
               <th className='border px-4'>SKU</th>
+              <th className='border px-4'>Price</th>
+              <th className='border px-4'>Stock</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -52,7 +55,10 @@ export default function index() {
             {data.map((item: any, i: number) => (
               <tr key={i} className='border'>
                 <td className='border p-2'>{item.name}</td>
+                <td className='border p-2'>{item.description}</td>
                 <td className='border p-2'>{item.sku}</td>
+                <td className='border p-2'>{item.price}</td>
+                <td className='border p-2'>{item.stock}</td>
                 <td className='border p-2 space-y-2'><Link className='bg-blue-2 px-4 py-1 rounded' href={`product/${item.id}`}>Edit</Link> <button onClick={() => handleDelete(item.id)} className='bg-red-1 px-4 py-1 rounded'>Delete</button></td>
               </tr>
             ))}
